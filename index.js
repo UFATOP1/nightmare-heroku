@@ -11,13 +11,13 @@ Array.prototype.randomElement = function () {
 }
 
 function randomTimeFromInterval(min, max) { // min and max included 
-    return (Math.floor(Math.random() * (max - min + 1) + min) * 600) / 6;
+    return (Math.floor(Math.random() * (max - min + 1) + min) * 6000) / 6;
 }
 
 let args = minimist(process.argv.slice(2), {
     default: {
         url:  'http://urlblone.herokuapp.com/ufax' ,//trurl.randomElement(),
-        windows: '1', // windows to be opened
+        windows: '10', // windows to be opened
         time: 'random', // Total time of the section in minutes
     }
 });
@@ -28,7 +28,7 @@ const venenoTrafficBot = async id => {
     
     let url = args.url,
         screenArray;
-    let miliseconds = (args.time == 'random') ? randomTimeFromInterval(8, 500) : (args.time * 600) / 6;
+    let miliseconds = (args.time == 'random') ? randomTimeFromInterval(8, 300) : (args.time * 600) / 6;
     let blacklist = ['https://twitter.com/intent/tweet/?text=%e0%b8%99%e0%b9%8a%e0%b8%ad%e0%b8%99%e0%b9%82%e0%b8%99%e0%b9%80%e0%b8%81%e0%b8%b5%e0%b8%a2&url=https%3a%2f%2fufapro888s.info%2fposts%2f2021%2f%25E0%25B8%2599%25E0%25B9%258A%25E0%25B8%25AD%25E0%25B8%2599%25E0%25B9%2582%25E0%25B8%2599%25E0%25B9%2580%25E0%25B8%2581%25E0%25B8%25B5%25E0%25B8%25A2%2f&hashtags=','https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fufapro888s.info%2fposts%2f2021%2f%25E0%25B8%2599%25E0%25B9%258A%25E0%25B8%25AD%25E0%25B8%2599%25E0%25B9%2582%25E0%25B8%2599%25E0%25B9%2580%25E0%25B8%2581%25E0%25B8%25B5%25E0%25B8%25A2%2f','https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fufapro888s.info%2fposts%2f2021%2f%25E0%25B8%2599%25E0%25B9%258A%25E0%25B8%25AD%25E0%25B8%2599%25E0%25B9%2582%25E0%25B8%2599%25E0%25B9%2580%25E0%25B8%2581%25E0%25B8%25B5%25E0%25B8%25A2%2f&title=%e0%b8%99%e0%b9%8a%e0%b8%ad%e0%b8%99%e0%b9%82%e0%b8%99%e0%b9%80%e0%b8%81%e0%b8%b5%e0%b8%a2&summary=%e0%b8%99%e0%b9%8a%e0%b8%ad%e0%b8%99%e0%b9%82%e0%b8%99%e0%b9%80%e0%b8%81%e0%b8%b5%e0%b8%a2&source=https%3a%2f%2fufapro888s.info%2fposts%2f2021%2f%25E0%25B8%2599%25E0%25B9%258A%25E0%25B8%25AD%25E0%25B8%2599%25E0%25B9%2582%25E0%25B8%2599%25E0%25B9%2580%25E0%25B8%2581%25E0%25B8%25B5%25E0%25B8%25A2%2f','https://line.me/R/ti/p/%40276yjfvc','https://dooball24hd.com/','https://24hdfree.com/','https://ufatop1.net/index.html','https://facebook.com/ufax249999','https://ufapro888s.info/index.xml','https://line.me/R/ti/p/@ufax24','https://www.youtube.com/channel/UC-bBTpDT0btr-agrcnsLYJQ', 'https://instagram.com/', 'https://www.superlivescore.com/', 'https://apps.apple.com/', 'https://twitter.com/','https://member.ufarec.com/register/?s=%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%8B%E0%B8%95%E0%B9%8C-ufax24&lang=th','https://member.ufarec.com/login/'];
 
     let ua = randomUserAgent();
