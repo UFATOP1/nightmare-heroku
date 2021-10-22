@@ -70,10 +70,8 @@ const venenoTrafficBot = async id => {
             [640, 480],
             [800, 600],
             [1024, 768],
-            [1152, 864],
-            [1280, 1024],
-            [1366, 768],
-            [1600, 1200]
+            [1152, 864]
+            
         ];
     }
 
@@ -84,7 +82,7 @@ const venenoTrafficBot = async id => {
         waitTimeout: 1000000, // in ms		
         width: randomScreenElement[0],
         height: randomScreenElement[1],
-        show: true
+        show: false
     });
     let scrollToH = [randomScreenElement[1] * 2, randomScreenElement[1] * 3 ]
     let scrollToW = [randomScreenElement[0] / 2, randomScreenElement[0] / 3 ]
